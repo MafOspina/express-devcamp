@@ -1,7 +1,21 @@
-exports.getAllBootcamps = (req, res)=>{
+//1. Objeto de conexión 
+const sequelize = require('../config/seq')
+
+//2.Data types
+const {DataTypes} = require('sequelize')
+
+const BootcampModel = require('../models/bootcamp')
+
+const Bootcamp = BootcampModel(sequelize, DataTypes)
+
+//3.Modelo
+
+exports.getAllBootcamps = async(req, res)=>{
+    const allBootcamps = await Bootcamp.findAll()
+
     res.status(200).json({
         "succes": true,
-        "data": `todos los bootcamps`
+        "data": allBootcamps
     })
 }
 
@@ -12,11 +26,13 @@ exports.getSingleBootcamp = (req, res)=>{
     })
 }
 
-exports.createBootcamp =  (req, res)=>{
+exports.createBootcamp =  async(req, res)=>{
+    const newBootcamp = await Bootcamp.create(req.body)
+
     //código de sstatus
     res.status(201).json({
         "succes": true,
-        "data": "creación de bootcamp"
+        "data": newBootcamp
     })
 }
 

@@ -13,29 +13,48 @@ exports.getAllUsers = async(req, res)=>{
     })
 }
 
-exports.getSingleUser = (req, res)=>{
+exports.getSingleUser = async(req, res)=>{
+    const singleUser = await User.findByPk(req.params.id)
+
     res.status(200).json({
         "succes": true,
-        "data": `single User ${ req.params.id }`
+        "data": singleUser
     })
 }
 
-exports.createUser =  (req, res)=>{
+exports.createUser =  async(req, res)=>{
+
+    const newUser = await User.create(req.body);
+
     //código de sstatus
     res.status(201).json({
         "succes": true,
-        "data": "creación de User"
+        "data": newUser
     })
 }
 
-exports.updateUser = (req, res)=>{
+exports.updateUser = async(req, res)=>{
+    await User.update(req.body, {
+        where:{
+            id:req.params.id
+        }
+    })
+
+    const singleUser = await User.findByPk(req.params.id)
+
     res.status(200).json({
         "succes": true,
-        "data": `update User ${ req.params.id }`
+        "data": singleUser
     })
 }
 
-exports.deleteUser = (req, res)=>{
+exports.deleteUser = async(req, res)=>{
+    await User.destroy({
+        where: {
+            id: req.params.id
+        }
+      });
+
     res.status(200).json({
         "succes": true,
         "data": `delete User ${ req.params.id }`
