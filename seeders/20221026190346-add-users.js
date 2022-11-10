@@ -9,7 +9,7 @@ module.exports = {
        username: 'John Doe',
        email: 'john@misena.edu.co',
        password: '1234'
-      },
+      }, 
       {
       username: 'Jane Doe',
        email: 'jane@misena.edu.co',

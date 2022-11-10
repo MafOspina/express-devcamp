@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     average_cost: DataTypes.REAL
   }, {
     sequelize,
+    timestamps:false,
     modelName: 'Bootcamp',
   });
   return Bootcamp;
