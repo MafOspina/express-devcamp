@@ -1,5 +1,5 @@
 pipeline {
-  agent { label 'Jenkins-Slave' }
+  agent any
 
   tools {
       nodejs 'nodejs'
