@@ -25,7 +25,7 @@ pipeline {
       stage('Install dependencies') {
         steps {
           sh 'npm --version'
-          sh "cd ${PROJECT_ROOT}; npm install"
+          sh 'npm install'
         }
       }
       stage('scan') {
