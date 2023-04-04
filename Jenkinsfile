@@ -20,7 +20,7 @@ pipeline {
       }
       stage('Checkout') {
         steps {
-            git branch: 'master', url: 'https://github.com/Mafe4236323123/express-devcamp' }
+            git branch: 'main', url: 'https://github.com/Mafe4236323123/express-devcamp' }
       }
       
       stage('scan') {
@@ -37,8 +37,9 @@ pipeline {
                           -Dsonar.projectName=labsonar3 \
                           -Dsonar.projectVersion=1.0 \
                           -Dsonar.sources=/var/jenkins_home/workspace/labjenkson \
-                          -Dsonar.language=js \
                           -Dsonar.host.url=http://docker-sonarqube-1:9000 \
+                          -Dsonar.language=js \
+                          -Dsonar.sourceEncoding=UTF-8 \                            
                           -Dsonar.login=admin \
                           -Dsonar.password=1234 "
             }
