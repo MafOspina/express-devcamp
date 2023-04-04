@@ -22,11 +22,7 @@ pipeline {
         steps {
             git branch: 'master', url: 'https://github.com/Mafe4236323123/express-devcamp' }
       }
-      stage('Install dependencies') {
-        steps {
-          sh 'npm install'
-        }
-      }
+      
       stage('scan') {
           environment {
             // Previously defined in the Jenkins "Global Tool Configuration"
