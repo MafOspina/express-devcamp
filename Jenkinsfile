@@ -1,10 +1,3 @@
-// Function to validate that the message returned from SonarQube is ok
-def qualityGateValidation(qg) {
-  if (qg.status != 'OK') {
-    return true
-  }
-  return false
-}
 pipeline {
   agent any
 
