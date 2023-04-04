@@ -20,7 +20,7 @@ pipeline {
       }
       stage('Checkout') {
         steps {
-            git branch: 'main', url: 'https://github.com/Mafe4236323123/express-devcamp' }
+            git branch: 'master', url: 'https://github.com/Mafe4236323123/express-devcamp' }
       }
       
       stage('scan') {
