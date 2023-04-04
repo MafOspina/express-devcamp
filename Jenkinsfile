@@ -38,9 +38,9 @@ pipeline {
                           -Dsonar.projectVersion=1.0 \
                           -Dsonar.sources=/var/jenkins_home/workspace/labjenkson \
                           -Dsonar.language=js \
-                          -Dsonar.host.url=http://docker-sonarqube-1:9000 \
+                          -Dsonar.host.url=http://sonarqube-sonarqube-1:9000 \
                           -Dsonar.login=admin \
-                          -Dsonar.password=1234 "
+                          -Dsonar.password=admin1 "
             }
           }
       }
