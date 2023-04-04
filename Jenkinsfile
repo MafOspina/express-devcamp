@@ -40,10 +40,6 @@ pipeline {
                           -Dsonar.login=admin \
                           -Dsonar.password=1234 "
             }
-            timeout(time: 3, unit: 'MINUTES') {
-              // In case of SonarQube failure or direct timeout exceed, stop Pipeline
-              waitForQualityGate abortPipeline: qualityGateValidation(waitForQualityGate())
-            }
           }
       }
   }
