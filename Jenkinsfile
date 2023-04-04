@@ -7,7 +7,7 @@ pipeline {
 
   environment {
       // General Variables for Pipeline
-      PROJECT_ROOT = 'express-devcamp/models'
+      PROJECT_ROOT = 'express-devcamp'
   }
 
   stages {
