@@ -15,6 +15,7 @@ pipeline {
         steps {
           // First stage is a sample hello-world step to verify correct Jenkins Pipeline
           echo 'Hello World, I am Happy'
+          sh "node -v"
           echo 'This is my amazing Pipeline'
         }
       }
