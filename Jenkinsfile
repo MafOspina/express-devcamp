@@ -43,7 +43,7 @@ pipeline {
                           -Dsonar.projectVersion=1.0 \
                           -Dsonar.host.url=http://docker-sonarqube-1:9000 \
                           -Dsonar.login=admin \
-                          -Dsonar.password=1234 \ "
+                          -Dsonar.password=1234 "
             }
             timeout(time: 3, unit: 'MINUTES') {
               // In case of SonarQube failure or direct timeout exceed, stop Pipeline
