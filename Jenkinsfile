@@ -36,6 +36,8 @@ pipeline {
                           -Dsonar.projectKey=labsonar3 \
                           -Dsonar.projectName=labsonar3 \
                           -Dsonar.projectVersion=1.0 \
+                          -Dsonar.branch.target=master \
+                          -Dsonar.branch.name=master \
                           -Dsonar.sources=/var/jenkins_home/workspace/labjenkson \
                           -Dsonar.language=js \
                           -Dsonar.host.url=http://sonarqube-sonarqube-1:9000 \
